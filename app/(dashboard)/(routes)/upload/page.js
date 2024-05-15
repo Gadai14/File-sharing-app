@@ -55,7 +55,9 @@ function Upload() {
       password:'',
       id:docId,
       // shortUrl:process.env.NEXT_PUBLIC_BASE_URL+docId
-      shortUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/f/${docId}` // Correctly construct the URL
+      // shortUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/f/${docId}` // Correctly construct the URL
+      shortUrl = `${window.location.origin}/f/${docId}`;
+
 
     });
     setFileDocId(docId)
