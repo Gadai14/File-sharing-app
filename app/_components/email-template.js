@@ -1,5 +1,5 @@
-import * as React from 'react';
-
+import * as React from "react";
+// import Image from "next/image";
 import {
   Body,
   Button,
@@ -15,110 +15,109 @@ import {
   Text,
 } from "@react-email/components";
 
-export const EmailTemplate = ({
-  firstName,
-}) => (
-  <Html>
-  <Head />
-  <Preview>Yelp recent login</Preview>
-  <Body style={main}>
-    <Container>
-      <Section style={logo}>
-        <Img src={`${baseUrl}/static/yelp-logo.png`} />
-      </Section>
+export const EmailTemplate = ({ responce, }) => (
+  <div>
+    <Html>
+      <Head />
+      <Preview>File Shared With You</Preview>
+      <Body style={main}>
+        <Container>
+          <Section style={content}>
+          {/* <Image src={fileType=='image'?file?.fileUrl:'/banner.png'}
+        width={620}
+        height={200}
+        alt='logo'
+        className='h-[200px] rounded-md object-contain '/> */}
 
-      <Section style={content}>
-        <Row>
-          <Img
-            style={image}
-            width={620}
-            src={`${baseUrl}/static/yelp-header.png`}
-          />
-        </Row>
+             <Img
+              width={620}
+              src={`https://yt3.googleusercontent.com/K4ZufSCvqT-Mx7ylpkoroVUR47Ka7CotpcQcRa2VqX5X5gLB1I7I33lfREK8SBfAZIzBV77sim4=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj`}
+            /> 
 
-        <Row style={{ ...boxInfos, paddingBottom: "0" }}>
-          <Column>
-            <Heading
-              style={{
-                fontSize: 32,
-                fontWeight: "bold",
-                textAlign: "center",
-              }}
-            >
-              Hi {userFirstName},
-            </Heading>
-            <Heading
-              as="h2"
-              style={{
-                fontSize: 26,
-                fontWeight: "bold",
-                textAlign: "center",
-              }}
-            >
-              We noticed a recent login to your Yelp account.
-            </Heading>
+            <Row style={{ paddingBottom: "0" }}>
+              <Column>
+                <Heading
+                  style={{
+                    fontSize: 32,
+                    fontWeight: "bold",
+                    textAlign: "center",
+                  }}
+                >
+                  Hi {responce?.emailToSend?.split("@")[0]},
+                </Heading>
+                <Heading
+                  as="h2"
+                  style={{
+                    fontSize: 26,
+                    fontWeight: "bold",
+                    textAlign: "center",
+                  }}
+                >
+                  {responce?.userName} Share file with you
+                </Heading>
 
-            <Text style={paragraph}>
-              <b>Time: </b>
-              {formattedDate}
-            </Text>
-            <Text style={{ ...paragraph, marginTop: -5 }}>
-              <b>Device: </b>
-              {loginDevice}
-            </Text>
-            <Text style={{ ...paragraph, marginTop: -5 }}>
-              <b>Location: </b>
-              {loginLocation}
-            </Text>
-            <Text
-              style={{
-                color: "rgb(0,0,0, 0.5)",
-                fontSize: 14,
-                marginTop: -5,
-              }}
-            >
-              *Approximate geographic location based on IP address:
-              {loginIp}
-            </Text>
+                <Text style={paragraph}>
+                  <b>File Name: {responce.fileName}</b>
+                </Text>
+                <Text style={{ marginTop: -5 }}>
+                  <b>
+                    File Size: {(responce.fileSize / 1024 / 1024).toFixed(2)}
+                  </b>
+                </Text>
+                <Text style={{ marginTop: -5 }}>
+                  <b>File Type: {responce.fileType}</b>
+                </Text>
+                <Text
+                  style={{
+                    color: "rgb(0,0,0, 0.5)",
+                    fontSize: 14,
+                    marginTop: -5,
+                  }}
+                >
+                  *Access and Download file on your own risk
+                </Text>
 
-            <Text style={paragraph}>
-              If this was you, there's nothing else you need to do.
-            </Text>
-            <Text style={{ ...paragraph, marginTop: -5 }}>
-              If this wasn't you or if you have additional questions, please
-              see our support page.
-            </Text>
-          </Column>
-        </Row>
-        <Row style={{ ...boxInfos, paddingTop: "0" }}>
-          <Column style={containerButton} colSpan={2}>
-            <Button style={button}>Learn More</Button>
-          </Column>
-        </Row>
-      </Section>
+                <Text style={paragraph}>
+                  Now You can also share file with Tubegurji FileSharo App
+                </Text>
+                <Text style={{ marginTop: -5 }}>
+                  Click Below Button to Access your file
+                </Text>
+              </Column>
+            </Row>
 
-      <Section style={containerImageFooter}>
-        <Img
-          style={image}
-          width={620}
-          src={`${baseUrl}/static/yelp-footer.png`}
-        />
-      </Section>
+            <a href={responce?.shortUrl}>Click To Download</a>
+            <Row style={{ paddingTop: "0" }}>
+              <Column style={containerButton} colSpan={2}>
+                <Button style={button} href={responce?.shortUrl}>
+                  Click here to Download
+                </Button>
+              </Column>
+            </Row>
+          </Section>
 
-      <Text
-        style={{
-          textAlign: "center",
-          fontSize: 12,
-          color: "rgb(0,0,0, 0.7)",
-        }}
-      >
-        © 2022 | Yelp Inc., 350 Mission Street, San Francisco, CA 94105,
-        U.S.A. | www.yelp.com
-      </Text>
-    </Container>
-  </Body>
-</Html>
+          <Section style={containerImageFooter}>
+            <Img
+              width={620}
+              src={`https://yt3.googleusercontent.com/K4ZufSCvqT-Mx7ylpkoroVUR47Ka7CotpcQcRa2VqX5X5gLB1I7I33lfREK8SBfAZIzBV77sim4=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj`}
+            />
+          </Section>
+
+          <Text
+            style={{
+              textAlign: "center",
+              fontSize: 12,
+              color: "rgb(0,0,0, 0.7)",
+            }}
+          >
+            © 2024 | Abhijit @2024 Copyrights India |
+          </Text>
+        </Container>
+      </Body>
+    </Html>
+  </div>
 );
+
 const main = {
   backgroundColor: "#fff",
   fontFamily:
@@ -141,12 +140,12 @@ const containerButton = {
 
 const button = {
   backgroundColor: "#e00707",
+  padding: "12px 30px",
   borderRadius: 3,
   color: "#FFF",
   fontWeight: "bold",
   border: "1px solid rgb(0,0,0, 0.1)",
   cursor: "pointer",
-  padding: "12px 30px",
 };
 
 const content = {
@@ -155,14 +154,20 @@ const content = {
   overflow: "hidden",
 };
 
-const image = {
-  maxWidth: "100%",
-};
-
 const boxInfos = {
-  padding: "20px",
+  padding: "20px 40px",
 };
 
 const containerImageFooter = {
   padding: "45px 0 0 0",
 };
+
+// import * as React from 'react';
+
+// export const EmailTemplate=({
+//   firstName,
+// }) =>(
+//   <div>
+//     <h1>Welcome, {firstName}!</h1>
+//   </div>
+// );
