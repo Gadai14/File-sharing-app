@@ -2,13 +2,13 @@
 import React, { useEffect, useState } from 'react'
 import { app } from '../../../firebaseConfig';
 import { doc, getDoc, getFirestore } from 'firebase/firestore';
-import { FileItemC } from './_components/FileItemC'
+import  FileItemC  from './_components/FileItemC'
 import Link from 'next/link';
 import Image from 'next/image';
 
 function FileView({params}) {
     const db = getFirestore(app);
-    const [file,setFile]=useState();
+    const [file,setFile]=useState(null);
     useEffect(()=>{
         // console.log(params.fileId)
         params.field&&getFileInfo()
@@ -36,7 +36,7 @@ function FileView({params}) {
             width={150}
             height={100}/>
         </Link>
-         <FileItemC file={file} />  
+         <FileItemC file={file ? file : {}} />  
         
     </div>
   )
