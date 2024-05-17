@@ -5,23 +5,23 @@ import React, { useState } from 'react'
 function FileItemC({file}) {
     const [password,setPassword]=useState('');
 
-    const [incorrectPassword, setIncorrectPassword] = useState(false);
+    // const [incorrectPassword, setIncorrectPassword] = useState(false);
 
-    const handleDownload = () => {
-        if (file.password && file.password !== password) {
-            // Incorrect password
-            setIncorrectPassword(true);
-            return;
-        }
+    // const handleDownload = () => {
+    //     if (file.password && file.password !== password) {
+    //         // Incorrect password
+    //         setIncorrectPassword(true);
+    //         return;
+    //     }
 
-        // If password is correct or not required
-        const link = document.createElement('a');
-        link.href = file.fileUrl;
-        link.download = file.fileName; // Set the downloaded file name
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
+    //     // If password is correct or not required
+    //     const link = document.createElement('a');
+    //     link.href = file.fileUrl;
+    //     link.download = file.fileName; // Set the downloaded file name
+    //     document.body.appendChild(link);
+    //     link.click();
+    //     document.body.removeChild(link);
+    // };
 
    
   return file&&(
@@ -53,8 +53,9 @@ function FileItemC({file}) {
        items-center hover:bg-blue-600
         text-[14px] mt-5 text-center  justify-center
         disabled:bg-gray-300' 
-        onClick={(handleDownload)=>window.open(file?.fileUrl)}
-        disabled={file.password!==password}>
+        onClick={()=>window.open(file?.fileUrl)}
+        // disabled={file.password!==password}
+        >
 
           <Download className='h-5 w-4' /> Download</button> 
          
