@@ -10,6 +10,8 @@ import Image from 'next/image';
 function FileView({params}) {
     const db = getFirestore(app);
     const [file,setFile]=useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+
     useEffect(()=>{
         // console.log(params.fileId)
         params.field&&getFileInfo()
@@ -26,10 +28,11 @@ function FileView({params}) {
             // docSnap.data() will be undefined in this case
             console.log("No such document!");
           }
+          setIsLoading(false);
     }
   return (
     <div className='
-    bg-gray-100 h-screen w-full flex justify-center
+    bg-white h-screen w-full flex justify-center
     items-center flex-col gap-4'>
         <Link href=''>
             <Image src='/logo.svg'
@@ -37,8 +40,11 @@ function FileView({params}) {
             width={150}
             height={100}/>
         </Link>
+        {isLoading ? (
+                <div>Loading...</div> // Loading indicator while data is being fetched
+            ) : (
          <FileItemC file={file ? file : {}} />  
-        
+        )}
     </div>
   )
 }

@@ -82,9 +82,9 @@ function Upload() {
   return (
     <div className='p-5 px-8 md:px-28 text-center'>
       {!uploadCompleted?<div>
-      <h2 className='text-[28px] text-center m-5'>Start 
-        <strong className='text-primary'> Uploading </strong> 
-        File and <strong className='text-primary'> Share</strong> it</h2>
+      <h2 className='text-[26px] text-center m-5'>Start 
+        <strong className='text-blue-600'> Uploading </strong> 
+        File and <strong className='text-blue-600'> Share</strong> it</h2>
 <UploadForm 
       uploadBtnClick={(file)=>uploadFile(file)} 
       progress={progress}

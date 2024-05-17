@@ -25,8 +25,8 @@ function FileItemC({file}) {
 
    
   return file&&(
-    <div className='bg-white'>
-    <div className='p-8 rounded-md border border-gray-200 border-solid flex flex-col items-center'>
+    <div className='bg-transparent'>
+    <div className='p-8 rounded-md border border-gray-300 border-solid flex flex-col items-center'>
      
       <div className='text-center flex-col gap-3 items-center flex'>
           <h2 className='text-[20px] text-gray-600'>
