@@ -22,7 +22,8 @@ function FileShareForm({ file,onPasswordSave }) {
             fileName:file.fileName,
             fileSize:file.fileSize,
             fileType:file.fileType,
-            shortUrl:file?.shortUrl
+            shortUrl:file?.shortUrl,
+            
           
 
         }

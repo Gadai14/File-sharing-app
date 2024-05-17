@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import  app  from '../../firebaseConfig';
+import  app  from '../../../firebaseConfig';
 
 import { doc, getDoc, getFirestore } from 'firebase/firestore';
 import  FileItemC  from './_components/FileItemC'
