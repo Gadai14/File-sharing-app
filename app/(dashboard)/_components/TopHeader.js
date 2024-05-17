@@ -5,7 +5,7 @@ import React from 'react'
 
 function TopHeader({setToggleBar}) {
   return (
-    <div className='flex p-5 border-b 
+    <div className='flex p-7 border-b 
     items-center justify-between
     md:justify-end'>
         <AlignJustify className='md:hidden'
