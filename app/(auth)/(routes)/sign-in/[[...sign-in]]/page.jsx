@@ -35,8 +35,7 @@ export default function Page() {
         </h2>
 
         <p className="mt-4 leading-relaxed text-white/90">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam
-          dolorum aliquam, quibusdam aperiam voluptatum.
+        Effortlessly share and access files anytime, anywhere with our intuitive and secure file sharing app. Enjoy seamless collaboration with lightning-fast transfers and robust data protection.
         </p>
       </div>
     </section>
@@ -63,15 +62,16 @@ export default function Page() {
           </h1>
 
           <p className="mt-4 leading-relaxed text-gray-500">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-            nam dolorum aliquam, quibusdam aperiam voluptatum.
+          Effortlessly share and access files anytime, anywhere with our intuitive and secure file sharing app. Enjoy seamless collaboration with lightning-fast transfers and robust data protection.
           </p>
         </div>
-
-      
-        <SignIn />
+<br />
+        <div className="flex items-center justify-center ">
+        <SignIn /> </div>
+       
       </div>
     </main>
+    
   </div>
 </section>
   );

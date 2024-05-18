@@ -33,7 +33,8 @@ export const EmailTemplate = ({ responce, }) => (
 
              <Img
               width={620}
-              src={`https://yt3.googleusercontent.com/K4ZufSCvqT-Mx7ylpkoroVUR47Ka7CotpcQcRa2VqX5X5gLB1I7I33lfREK8SBfAZIzBV77sim4=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj`}
+              height={300}
+              src={`https://plus.unsplash.com/premium_photo-1682310468892-5d8ade38f606?q=80&w=1824&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
             /> 
 
             <Row style={{ paddingBottom: "0" }}>
@@ -89,7 +90,9 @@ export const EmailTemplate = ({ responce, }) => (
             </Row>
 
             <a href={responce?.shortUrl}>Click To Download</a>
+            <br />
             <Row style={{ paddingTop: "0" }}>
+            
               <Column style={containerButton} colSpan={2}>
                 <Button style={button} href={responce?.shortUrl}>
                   Click here to Download
@@ -101,7 +104,8 @@ export const EmailTemplate = ({ responce, }) => (
           <Section style={containerImageFooter}>
             <Img
               width={620}
-              src={`https://yt3.googleusercontent.com/K4ZufSCvqT-Mx7ylpkoroVUR47Ka7CotpcQcRa2VqX5X5gLB1I7I33lfREK8SBfAZIzBV77sim4=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj`}
+              height={220}
+              src={`https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
             />
           </Section>
 

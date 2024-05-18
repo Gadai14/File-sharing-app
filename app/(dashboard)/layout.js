@@ -9,6 +9,12 @@ import Toast from '../_components/Toast';
 function layout({ children }) {
   const [toggle, setToggle] = useState(false);
   
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const resetActiveIndex = () => {
+    setActiveIndex(-1);
+  }
+  
   return (
     // <ToastContext.Provider value={{toast,setToast}}>
     <div>
